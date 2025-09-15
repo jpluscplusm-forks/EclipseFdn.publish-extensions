@@ -1,0 +1,22 @@
+name: TEST
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish_extensions:
+    name: TEST
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4.3.0
+        with:
+          node-version: "22.x"
+      - run: |
+          set -eux
+          git clone https://github.com/cue-lang/vscode-cue upstream
+          cd upstream/extension
+          npm install
+          #npm i -g @vscode/vsce pnpm
+          npm run package
+          ls -la
