@@ -198,6 +198,16 @@
   "ctf0.macros": {
     "repository": "https://github.com/ctf0/macros"
   },
+  "cuelangorg.vscode-cue": {
+    "repository": "https://github.com/cue-lang/vscode-cue",
+    "location": "extension",
+    "custom": [
+        "cd extension",
+        "npm install",
+        "npm run package",
+        "mv extension/*.vsix extension/extension.vsix"
+    ]
+  },
   "damc.textpad-color-theme": {
     "repository": "https://github.com/damc-code/themes"
   },
